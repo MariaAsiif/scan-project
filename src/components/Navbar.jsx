@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
         background: "#fff",
         boxShadow: "none",
@@ -46,7 +46,7 @@ export default function Navbar() {
             </a>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } , position:'relative' }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -63,6 +63,7 @@ export default function Navbar() {
             <Menu
               disableScrollLock={true}
               id="menu-appbar"
+              className="manu_container"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -79,9 +80,10 @@ export default function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
+              <MenuItem onClick={handleCloseNavMenu}  sx={{ padding: 0 }}>
                 <a
                   className="header_link"
+                  id="link"
                   href="#scanner"
                   style={{
                     textDecoration: "none",
@@ -103,6 +105,7 @@ export default function Navbar() {
               <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
                 <a
                   className="header_link"
+                  id="link"
                   href="#goals"
                   style={{
                     textDecoration: "none",
@@ -124,6 +127,7 @@ export default function Navbar() {
               <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
                 <a
                   className="header_link"
+                  id="link"
                   href="#contact"
                   style={{
                     textDecoration: "none",
@@ -165,9 +169,11 @@ export default function Navbar() {
                 display: "flex",
                 flexDirection: "row",
               }}
+              className="header_wraper"
             >
               <a
                 className="header_link"
+                id="link"
                 href="#scanner"
                 style={{
                   textDecoration: "none",
@@ -185,6 +191,7 @@ export default function Navbar() {
               </a>
               <a
                 className="header_link"
+                id="link"
                 href="#goals"
                 style={{
                   textDecoration: "none",
@@ -202,6 +209,7 @@ export default function Navbar() {
               </a>
               <a
                 className="header_link"
+                id="link"
                 href="#contact"
                 style={{
                   textDecoration: "none",

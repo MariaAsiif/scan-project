@@ -1,0 +1,150 @@
+.feature {
+    background-image: url('../static/media/goals.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+.goals_heading {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    padding: 20px;
+    color: white;
+
+}
+
+
+.goals_heading h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.text button {
+    width: 20%;
+    height: 40px;
+    margin-top: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.model_wrapper {
+    position: relative;
+    background-image: url('https://hotelredline.com/wp-content/uploads/2020/09/television-1024x683.jpg');
+    padding: 10px;
+    transform-style: preserve-3d;
+    transition: 0.25s ease;
+}
+
+.model_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: blue;
+    /* backface-visibility: hidden; */
+}
+
+.card:hover .model_wrapper {
+    transform: rotateY(180deg);
+}
+
+.model_container {
+    transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+.cardbox {
+    perspective: 500px;
+    margin: 15px;
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+
+/* 카드 색상. 1열 */
+.facebook {
+    background: #3b5998;
+
+}
+
+
+.card-front,.card-front_1, .card-front_2,
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 250px;
+    color: #fff;
+    backface-visibility: hidden;
+
+}
+
+.card-front {
+    background-size: cover;
+    background-image: url('../static/media/neural_1.jpg');
+
+}
+
+.card-front_1 {
+    background-size: cover;
+    background-image: url('../static/media/neural_2.jpg');
+
+}
+
+.card-front_2 {
+    background-size: cover;
+    background-image: url('../static/media/neural_3.jpg');
+
+}
+
+.card-back {
+    font-size: 15px;
+    flex-direction: column;
+    text-align: justify;
+    display: flex;
+    padding: 10px;
+}
+
+.card-back h3 {
+    text-align: center;
+}
+
+.card-front_1 {
+    text-align: center;
+
+}
+
+.card-front_2 {
+    text-align: center;
+
+}
+
+.cardbox:hover .card {
+    transform: rotateY(180deg);
+
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}

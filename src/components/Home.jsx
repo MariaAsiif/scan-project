@@ -8,7 +8,8 @@ import { Container, Divider, Grid } from "@mui/material";
 import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
-
+import './home.css'
+import ReadMore from "./readmore";
 export default function Home() {
   return (
     <>
@@ -84,12 +85,12 @@ export default function Home() {
         </Grid>
       </Container>
       <Container>
-      <h2
+        <h2
           style={{
             fontSize: "2rem",
             textAlign: "center",
             marginBottom: "20px",
-            marginTop:"40px",
+            marginTop: "40px",
           }}
         >
           Pre Trained Models
@@ -109,14 +110,35 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            
-            <h3>EfficientNet</h3>
-            <p style={{ textAlign: "justify" }}>
-            EfficientNet is a convolutional neural network architecture and scaling method that uniformly 
-            scales all dimensions of depth/width/resolution using a compound coefficient. Unlike 
-            conventional practice that arbitrary scales these factors, the EfficientNet scaling method 
-            uniformly scales network width, depth, and resolution with a set of fixed scaling coefficients. 
-            </p>
+
+            <div className="r">
+              <div className="cardbox">
+                <div className="card facebook">
+                  <div className="card-front"></div>
+                  <div className="card-back">
+                    <h3>EfficientNet</h3>
+                    EfficientNet is a convolutional neural network architecture and scaling method that uniformly
+                    scales all dimensions of depth/width/resolution using a compound coefficient. Unlike
+                    conventional practice that arbitrary scales these factors, the EfficientNet scaling method
+                    uniformly scales network width, depth, and resolution with a set of fixed scaling coefficients.
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div className="card">
+              <div className="model_wrapper">
+                <div className="model_container">
+                  <h3>EfficientNet</h3>
+                  <p style={{ textAlign: "justify" }}>
+                    EfficientNet is a convolutional neural network architecture and scaling method that uniformly
+                    scales all dimensions of depth/width/resolution using a compound coefficient. Unlike
+                    conventional practice that arbitrary scales these factors, the EfficientNet scaling method
+                    uniformly scales network width, depth, and resolution with a set of fixed scaling coefficients.
+                  </p>
+                </div>
+              </div>
+            </div> */}
+
           </Grid>
 
           <Grid
@@ -129,13 +151,22 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <h3>DenseNet</h3>
-            <p style={{ textAlign: "justify" }}>
-            A DenseNet is a type of convolutional neural network that utilises dense connections 
-            between layers, through Dense Blocks, where we connect all layers with matching feature-map sizes
-            directly with each other. To preserve the feed-forward nature, each layer obtains additional 
-            inputs from all preceding layers and passes on its own feature-maps to all subsequent layers.
-            </p>
+            <div className="r">
+              <div className="cardbox">
+                <div className="card facebook">
+                  <div className="card-front_1"></div>
+                  <div className="card-back">
+                    <h3>DenseNet</h3>
+                    A DenseNet is a type of convolutional neural network that utilises dense connections
+                    between layers, through Dense Blocks, where we connect all layers with matching feature-map sizes
+                    directly with each other. To preserve the feed-forward nature, each layer obtains additional
+                    inputs from all preceding layers and passes on its own feature-maps to all subsequent layers.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </Grid>
 
           <Grid
@@ -148,38 +179,41 @@ export default function Home() {
               alignItems: "center",
             }}
           >
-            <h3>ResNet</h3>
-            <p style={{ textAlign: "justify" }}>
-            Residual Networks, or ResNets, learn residual functions with reference to the layer inputs, 
-            instead of learning unreferenced functions. Instead of hoping each few stacked layers directly 
-            fit a desired underlying mapping, residual nets let these layers fit a residual mapping. They 
-            stack residual blocks ontop of each other to form network: e.g. a ResNet-50 has fifty layers using 
-            these blocks.
-            </p>
+            <div className="r">
+              <div className="cardbox">
+                <div className="card facebook">
+                  <div className="card-front_2"></div>
+                  <div className="card-back">
+                    <h3>ResNet</h3>
+                    Residual Networks, or ResNets, learn residual functions with reference to the layer inputs,
+                    instead of learning unreferenced functions. Instead of hoping each few stacked layers directly
+                    fit a desired underlying mapping, residual nets let these layers fit a residual mapping. They
+                    stack residual blocks ontop of each other to form network: e.g. a ResNet-50 has fifty layers using
+                    these blocks.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </Grid>
         </Grid>
       </Container>
       <ScannerSection />
-      <Container id="goals" sx={{ paddingBlock: "50px" }}>
-        <h2
-          style={{
-            fontSize: "2rem",
-            textAlign: "center",
-            marginBottom: "30px",
-          }}
-        >
-          Future Goals
-        </h2>
-        <p style={{ textAlign: "justify" }}>
-        Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
-        fake multimedia detection models and anti-forensics techniques against adversarial attacks 
-        using game theory on these developed models. Personalized, privacy-preserved based decision 
-        support system to predict neurological disorders and conditions such as subarachnoid hemorrhage 
-        and ischemic stroke by using federated, knowledge-infused learning, and deep learning models.
-        Develop secure, voice-controlled, explainable AI-based decision support systems for 
-        cyberphysical system (CPS) by designing
+      <Container id="goals" className="feature" sx={{ paddingBlock: "50px" }}>
+        <div className="goals_heading">
+          <h2> Future Goals</h2>
+          <ReadMore>
+            Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
+            fake multimedia detection models and anti-forensics techniques against adversarial attacks
+            using game theory on these developed models. Personalized, privacy-preserved based decision
+            support system to predict neurological disorders and conditions such as subarachnoid hemorrhage
+            and ischemic stroke by using federated, knowledge-infused learning, and deep learning models.
+            Develop secure, voice-controlled, explainable AI-based decision support systems for
+            cyberphysical system (CPS) by designing
 
-        </p>
+          </ReadMore>
+        </div>
       </Container>
       <ContactUs />
       <Container>
