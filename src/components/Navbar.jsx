@@ -41,9 +41,9 @@ export default function Navbar() {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            <a className="header_link" href={"/"}>
+            <span className="header_link" href={"/"}>
               <img className="main-logo" src={logo} alt="Logo" />
-            </a>
+            </span>
           </Typography>
 
           <Box  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } , position:'relative' }}>
