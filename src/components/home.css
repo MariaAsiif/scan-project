@@ -129,14 +129,23 @@
 .card-back h3 {
     text-align: center;
 }
-
-.card-front_1 {
+.card-front h3{
     text-align: center;
+    padding-top: 6rem;
+    font-size: 20px;
+}
+.card-front_1 h3 {
+    text-align: center;
+    padding-top: 6rem;
+    font-size: 20px;
 
 }
 
-.card-front_2 {
+.card-front_2 h3 {
     text-align: center;
+    padding-top: 6rem;
+    font-size: 20px;
+
 
 }
 

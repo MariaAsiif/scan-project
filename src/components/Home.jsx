@@ -114,9 +114,11 @@ export default function Home() {
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
-                  <div className="card-front"></div>
+                  <div className="card-front">
+                  <h3>EfficientNet</h3>
+                  </div>
                   <div className="card-back">
-                    <h3>EfficientNet</h3>
+                    
                     EfficientNet is a convolutional neural network architecture and scaling method that uniformly
                     scales all dimensions of depth/width/resolution using a compound coefficient. Unlike
                     conventional practice that arbitrary scales these factors, the EfficientNet scaling method
@@ -154,9 +156,11 @@ export default function Home() {
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
-                  <div className="card-front_1"></div>
+                  <div className="card-front_1">
+                  <h3>DenseNet</h3>
+                  </div>
                   <div className="card-back">
-                    <h3>DenseNet</h3>
+                   
                     A DenseNet is a type of convolutional neural network that utilises dense connections
                     between layers, through Dense Blocks, where we connect all layers with matching feature-map sizes
                     directly with each other. To preserve the feed-forward nature, each layer obtains additional
@@ -182,9 +186,11 @@ export default function Home() {
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
-                  <div className="card-front_2"></div>
+                  <div className="card-front_2">
+                  <h3>ResNet</h3>
+                  </div>
                   <div className="card-back">
-                    <h3>ResNet</h3>
+                    
                     Residual Networks, or ResNets, learn residual functions with reference to the layer inputs,
                     instead of learning unreferenced functions. Instead of hoping each few stacked layers directly
                     fit a desired underlying mapping, residual nets let these layers fit a residual mapping. They
