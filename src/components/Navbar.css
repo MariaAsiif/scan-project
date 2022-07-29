@@ -1,0 +1,14 @@
+.header_link {
+  display: flex;
+}
+
+.header_link:link,
+.header_link:visited {
+  color: #000;
+  font-size: 15px;
+}
+
+.header_link:hover,
+.header_link:active {
+  color: #6672bf;
+}
