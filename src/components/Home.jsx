@@ -110,7 +110,7 @@ export default function Home() {
       <ScannerSection />
       <Box id="goals" py={8} px={3}  >
         <Grid container   >
-          <Grid item md={6} sx={{ display: "flex", justifyContent: "center", }}   >
+          <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
             <Box>
               {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
               <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", }} component="h2">
@@ -126,8 +126,6 @@ export default function Home() {
                 cyberphysical system (CPS) by designing
               </ReadMore>
             </Box>
-
-
           </Grid>
           <Grid item md={6}  >
             <Box>
@@ -135,19 +133,6 @@ export default function Home() {
             </Box>
           </Grid>
         </Grid>
-
-        {/* <div className="goals_heading">
-          <h2> Future Goals</h2>
-          <ReadMore>
-            Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
-            fake multimedia detection models and anti-forensics techniques against adversarial attacks
-            using game theory on these developed models. Personalized, privacy-preserved based decision
-            support system to predict neurological disorders and conditions such as subarachnoid hemorrhage
-            and ischemic stroke by using federated, knowledge-infused learning, and deep learning models.
-            Develop secure, voice-controlled, explainable AI-based decision support systems for
-            cyberphysical system (CPS) by designing
-          </ReadMore>
-        </div> */}
       </Box>
       <ContactUs />
       <Container>

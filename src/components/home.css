@@ -32,6 +32,10 @@
     cursor: pointer;
 }
 
+.text button:hover {
+    background-color: #2a58ba;
+}
+
 .model_wrapper {
     position: relative;
     background-image: url('https://hotelredline.com/wp-content/uploads/2020/09/television-1024x683.jpg');
