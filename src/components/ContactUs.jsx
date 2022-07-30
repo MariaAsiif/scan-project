@@ -12,28 +12,45 @@ import PhoneIcon from "@mui/icons-material/Phone";
 // import AliceCarousel from "react-alice-carousel";
 // import "react-alice-carousel/lib/alice-carousel.css";
 import Slider from "react-slick";
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import { GrPrevious, GrNext } from "react-icons/gr";
+import { MdEmail, MdPermPhoneMsg } from "react-icons/md";
 function Contact(props) {
   return (
-    <div className="contact-card">
-      <img src={props.img} alt="person" />
-      <h3>{props.name}</h3>
-      <div className="info-text">
-        <p>{props.info}</p>
-      </div>
-      <div className="info-group">
+    <div>
+      <div className="wrapper">
         <div>
-          <PhoneIcon />
-          <a href={`tel:${props.phone_number}`} className="contact-link">
-            {props.phone_number}
-          </a>
+          <img src={props.img} />
         </div>
-        <div>
-          <EmailIcon />
-          <a href={`mailto:${props.email}`} className="contact-link">
-            {props.email}
-          </a>
+        <div className="info-section">
+          <h3>{props.name}</h3>
+          <p>{props.info}</p>
         </div>
+        <div className="contact-section">
+          <a href={`mailto:${props.email}`}><MdEmail /></a>
+          <a href={`tel:${props.phone_number}`}><MdPermPhoneMsg /></a>
+        </div>
+
+
       </div>
+    </div>
+  );
+}
+
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <div onClick={onClick} className="Next_arrow" >
+      <GrNext />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <div onClick={onClick} className="Prev_arrow" >
+      <GrPrevious />
     </div>
   );
 }
@@ -44,10 +61,12 @@ export default function ContactUs() {
     arrows: true,
     dots: false,
     speed: 500,
-    autoplay : true,
-    slidesToShow:3,
+    autoplay: true,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1200,
@@ -133,6 +152,7 @@ export default function ContactUs() {
         <Slider {...settings}  >
           {infoData.map((info, index) => (
             <Contact
+              key={index}
               img={info.img}
               name="Khalid Mahmood Malik, PhD, PMP"
               info="Possess extensive experience of industry and academic research in areas of 
@@ -140,6 +160,8 @@ export default function ContactUs() {
               phone_number="(212) 555-1234"
               email="mahmood@oakland.edu"
             />
+
+
 
           ))}
 

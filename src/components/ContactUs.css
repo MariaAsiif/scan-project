@@ -10,10 +10,12 @@
   margin-top: 20px;
   transition: all 0.3s;
 }
+
 .contact-card:hover {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
 }
-.contact-card > img {
+
+.contact-card>img {
   width: 100%;
   height: auto;
   align-self: center;
@@ -22,7 +24,7 @@
   object-fit: cover;
 }
 
-.contact-card > h3 {
+.contact-card>h3 {
   margin-block: 5px;
 }
 
@@ -60,7 +62,7 @@
   color: #000;
 }
 
-.info-group > div {
+.info-group>div {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -71,4 +73,62 @@
   font-size: 12px;
   color: #2b283a;
   padding-right: 20px;
+}
+
+.Prev_arrow,
+.Next_arrow {
+  position: absolute;
+  top: 43%;
+  z-index: 2;
+  background: white;
+  font-size: 24px;
+  border-radius: 50%;
+  padding: 3px;
+  filter: drop-shadow(0px 3px 4px #163E7B);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+}
+
+
+.Next_arrow {
+  right: 0;
+}
+
+.wrapper {
+  height: 100%;
+  margin: 0px 18px;
+  position: relative;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 18px
+    /* box-shadow: 0 0 12px -5px rgba(0, 0, 0, 0.75); */
+}
+
+.wrapper img {
+  width: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.info-section {
+  margin-top: 33px;
+  text-align: center;
+}
+
+.info-section h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #163E7B;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 33px;
+}
+
+.contact-section a {
+  color: #163E7B;
+  font-size: 30px;
+  margin: 0 12px;
 }
