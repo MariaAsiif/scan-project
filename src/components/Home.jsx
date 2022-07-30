@@ -20,7 +20,7 @@ export default function Home() {
       <div
         style={{ backgroundPosition: "top", backgroundSize: "100%", backgroundImage: `url(${topbanner})`, paddingBlock: "200px", }}  >
         <Container>
-          <h2 style={{ color: "#fff", fontSize: "2rem", width: "fit-content", marginInline: "auto", padding: "5px 15px", borderRadius: "15px", cursor: "default", }}>
+          <h2 style={{ color: "#fff", fontSize: "3rem", width: "fit-content", marginInline: "auto", padding: "5px 15px", borderRadius: "15px", cursor: "default", }}>
             Multimedia Signal Processing Lab
           </h2>
         </Container>
@@ -40,7 +40,7 @@ export default function Home() {
           </Grid>
           <Grid item xs={1}></Grid>
           <Grid item xs={12} sm={6} sx={{ display: "flex", alignItems: "center" }}  >
-            <video style={{ maxWidth: "100%", borderRadius: "20px", }} controls   >
+            <video autoPlay muted style={{ maxWidth: "100%", borderRadius: "20px", }} controls   >
               <source src={vid} type="video/mp4" />
             </video>
           </Grid>
@@ -141,8 +141,8 @@ export default function Home() {
         <div style={{ paddingBlock: "50px", display: "flex", alignItems: "center", justifyContent: "space-between", }}   >
           <p>Copyright 2022 - Smiles Lab</p>
           <div>
-            <p style={{ color: "#163E7B" }}>Social Media Links</p>
-            <ul style={{ listStyleType: "none", display: "flex", gap: "20px", }}  >
+            <p style={{ color: "#163E7B", marginBottom: 5 }}>Social Media Links</p>
+            <ul style={{ listStyleType: "none", display: "flex", justifyContent: "center", gap: "20px", }}  >
               <li>
                 <a href="linkedIn" className="social-link">
                   <LinkedIn />

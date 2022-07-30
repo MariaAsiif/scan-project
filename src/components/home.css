@@ -89,7 +89,7 @@
 .card {
     position: relative;
     width: 350px;
-    height: 250px;
+    height: 300px;
     background: #fff;
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
@@ -99,7 +99,7 @@
 
 /* 카드 색상. 1열 */
 .facebook {
-    background: #3b5998;
+    background: linear-gradient(90deg, rgba(22, 62, 123, 1) 0%, rgba(31, 68, 124, 1) 88%);
 
 }
 
@@ -112,7 +112,7 @@
     top: 0;
     left: 0;
     width: 350px;
-    height: 250px;
+    height: 300px;
     color: #fff;
     backface-visibility: hidden;
 

@@ -59,7 +59,7 @@ export default function ContactUs() {
     arrows: true,
     dots: false,
     speed: 500,
-    autoplay: false,
+    autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
