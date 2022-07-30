@@ -31,7 +31,7 @@ export default function Navbar() {
       <Container>
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }} >
-            <a className="header_link" href={"/"}>
+            <a className="header_link logolink" href={"/"}>
               <img className="main-logo" src={logo2} alt="Logo" />
             </a>
           </Typography>
@@ -90,7 +90,7 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end", }} >
             <div style={{ display: "flex", flexDirection: "row", }} className="header_wraper"  >
-              <a className="header_link" id="link" href="#deep-fake" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+              <a className="header_link" id="link" href="#deep-fake" style={{ color: "gray", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
                 <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Deep Fakes
                 </Typography>
@@ -100,7 +100,7 @@ export default function Navbar() {
                   Models
                 </Typography>
               </a>
-              <a className="header_link" id="link" href="#scanner" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }}  >
+              <a className="header_link" id="link" href="#scanner" style={{ color: "gray", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }}  >
                 <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}    >
                   Scanner
                 </Typography>
@@ -110,7 +110,7 @@ export default function Navbar() {
                   Future Goals
                 </Typography>
               </a>
-              <a className="header_link" id="link" href="#contact" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+              <a className="header_link" id="link" href="#contact" style={{ color: "gray", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
                 <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Contact Us
                 </Typography>

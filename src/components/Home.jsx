@@ -46,7 +46,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Container>
-      <Container id="models">
+      <Container maxWidth={false} id="models" style={{ background: "white", padding: "2% 12%" }}>
 
         <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", marginTop: "40px", color: "#163E7B" }}   >
           Pre Trained Models
@@ -109,7 +109,7 @@ export default function Home() {
         </Grid>
       </Container>
       <ScannerSection />
-      <Box id="goals" py={8} px={3}  >
+      <Box id="goals" py={8} px={3} style={{ background: "white", }}  >
         <Grid container spacing={5}  >
           <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
             <Box style={{ height: 312 }}>

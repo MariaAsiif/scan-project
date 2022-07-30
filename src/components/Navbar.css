@@ -27,7 +27,7 @@
   position: relative;
 }
 
-a {
+.header_link {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
@@ -37,7 +37,7 @@ a {
   position: relative;
 }
 
-a:after {
+.header_link:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -50,11 +50,17 @@ a:after {
   width: 0;
 }
 
-a:hover:after {
+.header_link:hover:after {
   width: 100%;
   left: 0;
 }
 
 .main-logo {
-  width: 50px
+  width: 60px;
+  margin-top: 12px;
+}
+
+.logolink:hover::after {
+  width: 0%;
+  left: 0;
 }

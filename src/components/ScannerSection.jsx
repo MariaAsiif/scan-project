@@ -4,7 +4,7 @@ import { Bars } from "react-loader-spinner";
 import { Alert, Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, Snackbar, } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUploadOutlined";
 import Box from '@mui/material/Box';
-import scannerPic from "../static/media/scanner-image.jpg"
+import scannerPic from "../static/media/scanner-image2.png"
 import { fontWeight } from "@mui/system";
 export default function ScannerSection() {
   const [model, setmodel] = useState("efficientNet")
@@ -82,7 +82,7 @@ export default function ScannerSection() {
   };
 
   return (
-    <Box id="scanner" py={8} px={3} style={{ background: "white" }}  >
+    <Box id="scanner" py={8} px={3} style={{ background: "#F5F5F5", }}   >
       <Grid container spacing={5}  >
         <Grid item md={6}  >
           <Box>
@@ -147,7 +147,7 @@ export default function ScannerSection() {
 
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "#dcdcdc96" }}>
                   <Bars color="#163E7B" width="100%" />
-                  <p style={{ textAlign: "center" }}>File is loading</p>
+                  <p style={{ textAlign: "center", fontSize: 23, fontWeight: 600 }}>File is loading</p>
                 </div>
 
               </>
