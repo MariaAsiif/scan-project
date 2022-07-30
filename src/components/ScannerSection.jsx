@@ -7,6 +7,8 @@ import Box from '@mui/material/Box';
 import scannerPic from "../static/media/scanner-image.jpg"
 import { fontWeight } from "@mui/system";
 export default function ScannerSection() {
+  const [model, setmodel] = useState("")
+  const [clip, setclip] = useState("")
   const [file, setFile] = useState("");
   const [result, setResult] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -31,6 +33,18 @@ export default function ScannerSection() {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    if (model === "") {
+      setErrorMsg("Please select a model.");
+      handleClick();
+      return
+    }
+    if (clip === "") {
+      setErrorMsg("Please select a clip.");
+      handleClick();
+      return
+    }
+
 
     if (file === "") {
       setErrorMsg("Please select a video to scan.");
@@ -82,35 +96,71 @@ export default function ScannerSection() {
             </Alert>
 
           </Snackbar>
-          <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", color: "#163E7B", fontWeight: "500" }} >Scanner</h2>
-          <FormControl sx={{ width: "100%", }}  >
+          <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", color: "#163E7B", }} >Deep fake Scanner</h2>
+          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
             <InputLabel id="select-model" sx={{ color: "#163E7B", }}   >
               Choose Model
             </InputLabel>
-            <Select labelId="select-model" id="select-model" label="Choose Model"
-              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #636fbd", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            <Select value={model} onChange={(e) => { setmodel(e.target.value) }} labelId="select-model" id="select-model" label="Choose Model"
+              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             >
+              <MenuItem value="">Select Model</MenuItem>
               <MenuItem value="efficientNet">Efficient Net</MenuItem>
               <MenuItem value="resNet">Res Net</MenuItem>
               <MenuItem value="denseNet">Dense Net</MenuItem>
             </Select>
+          </FormControl>
+          <FormControl sx={{ width: "40%", marginBottom: 2 }}>
+            <InputLabel sx={{ color: "#163E7B", }} id="select-clip">Choose clip</InputLabel>
+            <Select
+              labelId="select-clip"
+              id="select-clip"
+              value={clip}
+              label="Age"
+              onChange={(e) => { setclip(e.target.value) }}
+              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+
+            >
+              <MenuItem value={""}>Select Clip</MenuItem>
+              <MenuItem value={"audio"}>audio</MenuItem>
+              <MenuItem value={"video"}>video</MenuItem>
+              <MenuItem value={"multimode/both"}>multimode/both</MenuItem>
+            </Select>
+          </FormControl>
+
+
+          {/* <InputLabel id="select-clip " sx={{ color: "#163E7B", }}   >
+              Choose Clip 
+            </InputLabel>
+            <Select labelId="select-clip" id="select-clip" label="Choose Clip"
+              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            >
+              <MenuItem value="audio">audio</MenuItem>
+              <MenuItem value="video">video</MenuItem>
+              <MenuItem value="denseNet/both">multimode/both</MenuItem>
+            </Select> */}
+          <div style={{ marginBottom: 15 }} >
             <Button component="label" variant="outlined" className="upload_button" startIcon={<CloudUploadIcon />}
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
             >
-              Upload a Video
-              <input type="file" accept=".mp4" style={{ display: "none", }} id="customFile" onChange={onChange} />
+              Upload your file
+              <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
+          </div>
+          <div>
             <Button variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
               SCAN
             </Button>
-            {isLoading ?
-              (
-                <Bars color="#163E7B" width="100%" />
-              ) : (
-                <p style={{ textAlign: "center", color: "#fff" }}>{result}</p>
-              )}
-          </FormControl>
+          </div>
+
+          {isLoading ?
+            (
+              <Bars color="#163E7B" width="100%" />
+            ) : (
+              <p style={{ textAlign: "center", color: "#fff" }}>{result}</p>
+            )}
+
         </Grid>
 
       </Grid>
