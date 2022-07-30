@@ -12,3 +12,8 @@ body {
 .scroll-to-top:hover {
   color: black !important;
 }
+
+.css-1dlu8to-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #163E7B;
+  border-width: 2px;
+}

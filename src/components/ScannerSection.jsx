@@ -109,17 +109,20 @@ export default function ScannerSection() {
               <MenuItem value="denseNet">Dense Net</MenuItem>
             </Select>
           </FormControl>
-          <FormControl sx={{ width: "40%", marginBottom: 2 }}>
-            <InputLabel sx={{ color: "#163E7B", }} id="select-clip">Choose clip</InputLabel>
-            <Select labelId="select-clip" id="select-clip" value={clip} label="Age" onChange={(e) => { setclip(e.target.value) }}
-              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
 
+          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
+            <InputLabel id="select-clip" sx={{ color: "#163E7B", }}   >
+              Choose clip
+            </InputLabel>
+            <Select value={clip} onChange={(e) => { setclip(e.target.value) }} labelId="select-clip" id="select-clip" label="Choose Clip"
+              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             >
               <MenuItem value={"audio"}>audio</MenuItem>
               <MenuItem value={"video"}>video</MenuItem>
               <MenuItem value={"multimode/both"}>multimode/both</MenuItem>
             </Select>
           </FormControl>
+
 
 
 
@@ -141,9 +144,12 @@ export default function ScannerSection() {
           {isLoading ?
             (
               <>
-                <Bars color="#163E7B" width="100%" />
-                <p style={{ textAlign: "center" }}>File is loading</p>
-                <div style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "#dcdcdc96" }}> </div>
+
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "#dcdcdc96" }}>
+                  <Bars color="#163E7B" width="100%" />
+                  <p style={{ textAlign: "center" }}>File is loading</p>
+                </div>
+
               </>
 
             ) : (
