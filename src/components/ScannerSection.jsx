@@ -86,7 +86,7 @@ export default function ScannerSection() {
       <Grid container spacing={5}  >
         <Grid item md={6}  >
           <Box>
-            <img style={{ width: "600px" }} src={scannerPic} />
+            <img id="scannerimage" src={scannerPic} />
           </Box>
         </Grid>
         <Grid item md={6}    >
