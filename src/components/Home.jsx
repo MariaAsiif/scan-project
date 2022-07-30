@@ -109,7 +109,7 @@ export default function Home() {
       </Container>
       <ScannerSection />
       <Box id="goals" py={8} px={3}  >
-        <Grid container   >
+        <Grid container spacing={5}  >
           <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
             <Box>
               {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
