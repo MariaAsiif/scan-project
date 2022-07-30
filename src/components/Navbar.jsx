@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "./../static/media/Logo.png";
+import logo2 from "./../static/media/log_v2.png";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -31,7 +32,7 @@ export default function Navbar() {
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }} >
             <span className="header_link" href={"/"}>
-              <img className="main-logo" src={logo} alt="Logo" />
+              <img className="main-logo" src={logo2} alt="Logo" />
             </span>
           </Typography>
 

@@ -113,7 +113,7 @@ export default function Home() {
           <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
             <Box>
               {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
-              <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", }} component="h2">
+              <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", marginBlock: 20 }} component="h2">
                 Future Goals
               </Typography>
               <ReadMore>

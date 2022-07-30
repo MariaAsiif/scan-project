@@ -21,6 +21,10 @@
     font-size: 3rem;
 }
 
+.text {
+    text-align: justify;
+}
+
 .text button {
     width: 20%;
     height: 40px;

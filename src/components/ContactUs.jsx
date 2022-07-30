@@ -27,11 +27,9 @@ function Contact(props) {
           <p>{props.info}</p>
         </div>
         <div className="contact-section">
-          <a href={`mailto:${props.email}`}><MdEmail /></a>
-          <a href={`tel:${props.phone_number}`}><MdPermPhoneMsg /></a>
+          <a href={`mailto:${props.email}`}> <MdEmail /></a>
+          <a href={`tel:${props.phone_number}`}><MdPermPhoneMsg />   </a>
         </div>
-
-
       </div>
     </div>
   );
@@ -61,7 +59,7 @@ export default function ContactUs() {
     arrows: true,
     dots: false,
     speed: 500,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -134,21 +132,11 @@ export default function ContactUs() {
   ]
   return (
     <Container id="contact" sx={{ marginBottom: "50px" }}>
-      <h2
-        style={{
-          fontSize: "2rem",
-          textAlign: "center",
-          marginBottom: "30px",
-        }}
-      >
+      <h1
+        style={{ fontSize: "48px", textAlign: "center", marginBottom: "30px", color: "#163E7B" }}  >
         Contact Us
-      </h2>
-      <div
-        style={{
-          gap: "20px",
-          alignItems: "center",
-        }}
-      >
+      </h1>
+      <div style={{ gap: "20px", alignItems: "center", }} >
         <Slider {...settings}  >
           {infoData.map((info, index) => (
             <Contact

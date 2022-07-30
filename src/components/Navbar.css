@@ -1,4 +1,4 @@
-.manu_container{
+.manu_container {
   position: absolute;
 }
 
@@ -23,7 +23,7 @@
   color: #6672bf;
 } */
 
-.header_wraper{
+.header_wraper {
   position: relative;
 }
 
@@ -32,11 +32,12 @@ a {
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15em;
-  
+
   display: inline-block;
   position: relative;
 }
-a:after {    
+
+a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -48,7 +49,12 @@ a:after {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-a:hover:after { 
-  width: 100%; 
-  left: 0; 
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.main-logo {
+  width: 50px
 }

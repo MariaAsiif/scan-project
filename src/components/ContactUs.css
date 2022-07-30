@@ -1,80 +1,3 @@
-.contact-card {
-  width: 350px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  padding: 13px;
-  padding-bottom: 20px;
-  background-color: white;
-  margin-right: 20px;
-  margin-top: 20px;
-  transition: all 0.3s;
-}
-
-.contact-card:hover {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-}
-
-.contact-card>img {
-  width: 100%;
-  height: auto;
-  align-self: center;
-  border-radius: 5px;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-.contact-card>h3 {
-  margin-block: 5px;
-}
-
-.info-text {
-  text-align: justify;
-  margin-block: 8px;
-}
-
-.info-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.contact-link:link,
-.contact-link:visited {
-  text-decoration: none;
-}
-
-.contact-link:hover,
-.contact-link:active {
-  text-decoration: underline;
-}
-
-.social-link:link,
-.social-link:visited {
-  text-decoration: none;
-  color: #555;
-  transition: all 0.3s;
-}
-
-.social-link:hover,
-.social-link:active {
-  text-decoration: underline;
-  color: #000;
-}
-
-.info-group>div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.info-group p {
-  margin-block: 3px;
-  font-size: 12px;
-  color: #2b283a;
-  padding-right: 20px;
-}
-
 .Prev_arrow,
 .Next_arrow {
   position: absolute;
@@ -96,7 +19,7 @@
 }
 
 .wrapper {
-  height: 100%;
+  height: 500px;
   margin: 0px 18px;
   position: relative;
   border-radius: 0.5rem;
