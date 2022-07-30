@@ -112,7 +112,7 @@ export default function Home() {
       <Box id="goals" py={8} px={3} style={{ background: "white", }}  >
         <Grid container spacing={5}  >
           <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
-            <Box style={{ height: 312 }}>
+            <Box id="future-goals"  >
               {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
               <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", marginBlock: 20 }} component="h2">
                 Future Goals
