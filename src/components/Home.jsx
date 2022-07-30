@@ -1,5 +1,6 @@
 import React from "react";
 import uet from "./../static/media/work2.jpg";
+import topbanner from "./../static/media/top_banner.jpg";
 import vid from "./../static/media/deepfake-video.mp4";
 import Navbar from "./Navbar";
 import ScannerSection from "./ScannerSection";
@@ -17,9 +18,9 @@ export default function Home() {
     <>
       <Navbar />
       <div
-        style={{ backgroundPosition: "top", backgroundSize: "100%", backgroundImage: `url(${uet})`, paddingBlock: "200px", }}  >
+        style={{ backgroundPosition: "top", backgroundSize: "100%", backgroundImage: `url(${topbanner})`, paddingBlock: "200px", }}  >
         <Container>
-          <h2 style={{ color: "#fff", fontSize: "2rem", width: "fit-content", marginInline: "auto", padding: "5px 15px", borderRadius: "15px", background: "rgba(0,0,0,0.75)", cursor: "default", }}>
+          <h2 style={{ color: "#fff", fontSize: "2rem", width: "fit-content", marginInline: "auto", padding: "5px 15px", borderRadius: "15px", cursor: "default", }}>
             Multimedia Signal Processing Lab
           </h2>
         </Container>
@@ -27,7 +28,7 @@ export default function Home() {
       <Container id="deep-fake" sx={{ paddingBlock: "20px", }} >
         <Grid container sx={{ paddingTop: "40px" }}>
           <Grid ite xs={12} sm={5} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", }} >
-            <h1>What are DeepFakes</h1>
+            <h1 style={{ fontSize: "48px", marginBottom: "20px", color: "#163E7B" }} >What are DeepFakes</h1>
             <p style={{ textAlign: "justify" }}>
               Deepfakes are synthetic media in which a person in an existing
               image or video is replaced with someone else's likeness. While the
@@ -47,7 +48,7 @@ export default function Home() {
       </Container>
       <Container id="models">
 
-        <h2 style={{ fontSize: "2rem", textAlign: "center", marginBottom: "20px", marginTop: "40px", }}   >
+        <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", marginTop: "40px", color: "#163E7B" }}   >
           Pre Trained Models
         </h2>
         <Grid container spacing={5} sx={{ marginTop: "20px", marginBottom: "40px" }}  >
@@ -111,7 +112,7 @@ export default function Home() {
       <Box id="goals" py={8} px={3}  >
         <Grid container spacing={5}  >
           <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
-            <Box>
+            <Box style={{ height: 312 }}>
               {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
               <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", marginBlock: 20 }} component="h2">
                 Future Goals
@@ -137,25 +138,29 @@ export default function Home() {
       <ContactUs />
       <Container>
         <Divider />
-        <div style={{ paddingBlock: "50px", display: "flex", justifyContent: "space-between", }}   >
+        <div style={{ paddingBlock: "50px", display: "flex", alignItems: "center", justifyContent: "space-between", }}   >
           <p>Copyright 2022 - Smiles Lab</p>
-          <ul style={{ listStyleType: "none", display: "flex", gap: "20px", }}  >
-            <li>
-              <a href="linkedIn" className="social-link">
-                <LinkedIn />
-              </a>
-            </li>
-            <li>
-              <a href="instagram" className="social-link">
-                <Instagram />
-              </a>
-            </li>
-            <li>
-              <a href="twitter" className="social-link">
-                <Twitter />
-              </a>
-            </li>
-          </ul>
+          <div>
+            <p style={{ color: "#163E7B" }}>Social Media Links</p>
+            <ul style={{ listStyleType: "none", display: "flex", gap: "20px", }}  >
+              <li>
+                <a href="linkedIn" className="social-link">
+                  <LinkedIn />
+                </a>
+              </li>
+              <li>
+                <a href="instagram" className="social-link">
+                  <Instagram />
+                </a>
+              </li>
+              <li>
+                <a href="twitter" className="social-link">
+                  <Twitter />
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </Container>
     </>

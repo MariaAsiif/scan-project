@@ -13,13 +13,17 @@
   height: 34px;
 }
 
+.Prev_arrow:hover,
+.Next_arrow:hover {
+  background: #163E7B;
+}
 
 .Next_arrow {
   right: 0;
 }
 
 .wrapper {
-  height: 500px;
+  height: 510px;
   margin: 0px 18px;
   position: relative;
   border-radius: 0.5rem;
@@ -30,6 +34,7 @@
 
 .wrapper img {
   width: 160px;
+  height: 160px;
   margin: 0 auto;
   border-radius: 50%;
 }

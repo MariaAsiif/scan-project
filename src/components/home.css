@@ -67,6 +67,14 @@
     transform: rotateY(180deg);
 }
 
+.social-link {
+    color: #163E7B;
+}
+
+.social-link:hover {
+    color: #2a58ba;
+}
+
 
 
 
