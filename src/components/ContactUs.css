@@ -11,11 +11,13 @@
   cursor: pointer;
   width: 34px;
   height: 34px;
+  color: red
 }
 
 .Prev_arrow:hover,
 .Next_arrow:hover {
   background: #163E7B;
+  color: red
 }
 
 .Next_arrow {
