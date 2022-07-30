@@ -24,205 +24,92 @@ export default function Navbar() {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      sx={{
-        background: "#fff",
-        boxShadow: "none",
-        borderBottom: "1.5px solid rgb(230, 230, 230)",
-        filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))",
-      }}
-    >
+    <AppBar position="sticky" sx={{ background: "#fff", boxShadow: "none", borderBottom: "1.5px solid rgb(230, 230, 230)", filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))", }} >
       <Container>
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }} >
             <span className="header_link" href={"/"}>
               <img className="main-logo" src={logo} alt="Logo" />
             </span>
           </Typography>
 
-          <Box  sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } , position:'relative' }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-              sx={{
-                color: "#000",
-              }}
-            >
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, position: 'relative' }}>
+            <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit" sx={{ color: "#000", }} >
               <MenuIcon />
             </IconButton>
-            <Menu
-              disableScrollLock={true}
-              id="menu-appbar"
-              className="manu_container"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <MenuItem onClick={handleCloseNavMenu}  sx={{ padding: 0 }}>
-                <a
-                  className="header_link"
-                  id="link"
-                  href="#scanner"
-                  style={{
-                    textDecoration: "none",
-                    paddingInline: "16px",
-                    paddingBlock: "6px",
-                    width: "100%",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      textTransform: "none",
-                    }}
-                  >
+            <Menu disableScrollLock={true} id="menu-appbar" className="manu_container" anchorEl={anchorElNav} anchorOrigin={{ vertical: "bottom", horizontal: "left", }} keepMounted transformOrigin={{ vertical: "top", horizontal: "left", }} open={Boolean(anchorElNav)} onClose={handleCloseNavMenu} sx={{ display: { xs: "block", md: "none" }, }} >
+              <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
+                <a className="header_link" id="link" href="#scanner" style={{ textDecoration: "none", paddingInline: "16px", paddingBlock: "6px", width: "100%", }} >
+                  <Typography sx={{ textTransform: "none", }} >
                     Scanner
                   </Typography>
                 </a>
               </MenuItem>
               <Divider style={{ width: "70%", marginInline: "auto" }} />
               <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
-                <a
-                  className="header_link"
-                  id="link"
-                  href="#goals"
-                  style={{
-                    textDecoration: "none",
-                    paddingInline: "16px",
-                    paddingBlock: "6px",
-                    width: "100%",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      textTransform: "none",
-                    }}
-                  >
+                <a className="header_link" id="link" href="#goals" style={{ textDecoration: "none", paddingInline: "16px", paddingBlock: "6px", width: "100%", }}>
+                  <Typography sx={{ textTransform: "none", }}  >
                     Future Goals
                   </Typography>
                 </a>
               </MenuItem>
               <Divider style={{ width: "70%", marginInline: "auto" }} />
               <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
-                <a
-                  className="header_link"
-                  id="link"
-                  href="#contact"
-                  style={{
-                    textDecoration: "none",
-                    paddingInline: "16px",
-                    paddingBlock: "6px",
-                    width: "100%",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      textTransform: "none",
-                    }}
-                  >
+                <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", paddingInline: "16px", paddingBlock: "6px", width: "100%", }} >
+                  <Typography sx={{ textTransform: "none", }} >
                     Contact Us
                   </Typography>
                 </a>
               </MenuItem>
+              <Divider style={{ width: "70%", marginInline: "auto" }} />
+              <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
+                <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", paddingInline: "16px", paddingBlock: "6px", width: "100%", }} >
+                  <Typography sx={{ textTransform: "none", }} >
+                    Deep Fakes
+                  </Typography>
+                </a>
+              </MenuItem>
+              <Divider style={{ width: "70%", marginInline: "auto" }} />
+              <MenuItem onClick={handleCloseNavMenu} sx={{ padding: 0 }}>
+                <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", paddingInline: "16px", paddingBlock: "6px", width: "100%", }} >
+                  <Typography sx={{ textTransform: "none", }} >
+                    Models
+                  </Typography>
+                </a>
+              </MenuItem>
+
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} >
             <a className="header_link" href={"/"}>
               <img className="main-logo" src={logo} alt="Logo" />
             </a>
           </Typography>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-              }}
-              className="header_wraper"
-            >
-              <a
-                className="header_link"
-                id="link"
-                href="#scanner"
-                style={{
-                  textDecoration: "none",
-                  marginInline: "16px",
-                  marginBlock: "6px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "none",
-                  }}
-                >
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end", }} >
+            <div style={{ display: "flex", flexDirection: "row", }} className="header_wraper"  >
+              <a className="header_link" id="link" href="#scanner" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }}  >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Scanner
                 </Typography>
               </a>
-              <a
-                className="header_link"
-                id="link"
-                href="#goals"
-                style={{
-                  textDecoration: "none",
-                  marginInline: "16px",
-                  marginBlock: "6px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "none",
-                  }}
-                >
+              <a className="header_link" id="link" href="#goals" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}   >
                   Future Goals
                 </Typography>
               </a>
-              <a
-                className="header_link"
-                id="link"
-                href="#contact"
-                style={{
-                  textDecoration: "none",
-                  marginInline: "16px",
-                  marginBlock: "6px",
-                }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "none",
-                  }}
-                >
+              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Contact Us
+                </Typography>
+              </a>
+              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
+                  Deep Fakes
+                </Typography>
+              </a>
+              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
+                  Models
                 </Typography>
               </a>
             </div>
