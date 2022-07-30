@@ -4,7 +4,7 @@ import vid from "./../static/media/deepfake-video.mp4";
 import Navbar from "./Navbar";
 import ScannerSection from "./ScannerSection";
 import ContactUs from "./ContactUs";
-import { Container, Divider, Grid } from "@mui/material";
+import { Container, Divider, Grid, Typography } from "@mui/material";
 import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
@@ -108,11 +108,14 @@ export default function Home() {
         </Grid>
       </Container>
       <ScannerSection />
-      <Container maxWidth={false} id="goals"    >
+      <Box id="goals" py={8} px={3}  >
         <Grid container   >
-          <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
+          <Grid item md={6} sx={{ display: "flex", justifyContent: "center", }}   >
             <Box>
-              <h2> Future Goals</h2>
+              {/* <h2 style={{ color: "#163E7B", fontSize: "29px" }}> Future Goals</h2> */}
+              <Typography variant="h3" style={{ fontWeight: 600, color: "#163E7B", }} component="h2">
+                Future Goals
+              </Typography>
               <ReadMore>
                 Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
                 fake multimedia detection models and anti-forensics techniques against adversarial attacks
@@ -145,7 +148,7 @@ export default function Home() {
             cyberphysical system (CPS) by designing
           </ReadMore>
         </div> */}
-      </Container>
+      </Box>
       <ContactUs />
       <Container>
         <Divider />

@@ -25,7 +25,7 @@
     width: 20%;
     height: 40px;
     margin-top: 20px;
-    background-color: orangered;
+    background-color: #163E7B;
     border-radius: 5px;
     border: none;
     color: white;
@@ -88,7 +88,9 @@
 }
 
 
-.card-front,.card-front_1, .card-front_2,
+.card-front,
+.card-front_1,
+.card-front_2,
 .card-back {
     position: absolute;
     top: 0;
@@ -129,11 +131,13 @@
 .card-back h3 {
     text-align: center;
 }
-.card-front h3{
+
+.card-front h3 {
     text-align: center;
     padding-top: 6rem;
     font-size: 20px;
 }
+
 .card-front_1 h3 {
     text-align: center;
     padding-top: 6rem;
