@@ -10,6 +10,8 @@ import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
 import './home.css'
 import ReadMore from "./readmore";
+import Box from '@mui/material/Box';
+import goalsPic from "../static/media/goals_pic.png"
 export default function Home() {
   return (
     <>
@@ -106,8 +108,32 @@ export default function Home() {
         </Grid>
       </Container>
       <ScannerSection />
-      <Container id="goals" className="feature" sx={{ paddingBlock: "50px" }}>
-        <div className="goals_heading">
+      <Container maxWidth={false} id="goals"    >
+        <Grid container   >
+          <Grid item md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center", }}   >
+            <Box>
+              <h2> Future Goals</h2>
+              <ReadMore>
+                Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
+                fake multimedia detection models and anti-forensics techniques against adversarial attacks
+                using game theory on these developed models. Personalized, privacy-preserved based decision
+                support system to predict neurological disorders and conditions such as subarachnoid hemorrhage
+                and ischemic stroke by using federated, knowledge-infused learning, and deep learning models.
+                Develop secure, voice-controlled, explainable AI-based decision support systems for
+                cyberphysical system (CPS) by designing
+              </ReadMore>
+            </Box>
+
+
+          </Grid>
+          <Grid item md={6}  >
+            <Box>
+              <img style={{ width: "100%" }} src={goalsPic} />
+            </Box>
+          </Grid>
+        </Grid>
+
+        {/* <div className="goals_heading">
           <h2> Future Goals</h2>
           <ReadMore>
             Explainable and Fairness enabled hybrid anomaly, signature and deep reinforcement learning based
@@ -118,7 +144,7 @@ export default function Home() {
             Develop secure, voice-controlled, explainable AI-based decision support systems for
             cyberphysical system (CPS) by designing
           </ReadMore>
-        </div>
+        </div> */}
       </Container>
       <ContactUs />
       <Container>
