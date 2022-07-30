@@ -11,7 +11,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-
+import { blue, indigo } from '@mui/material/colors';
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -22,6 +22,8 @@ export default function Navbar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+
 
   return (
     <AppBar position="sticky" sx={{ background: "#fff", boxShadow: "none", borderBottom: "1.5px solid rgb(230, 230, 230)", filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25))", }} >
@@ -87,31 +89,33 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "flex-end", }} >
             <div style={{ display: "flex", flexDirection: "row", }} className="header_wraper"  >
-              <a className="header_link" id="link" href="#scanner" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }}  >
-                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
-                  Scanner
-                </Typography>
-              </a>
-              <a className="header_link" id="link" href="#goals" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
-                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}   >
-                  Future Goals
-                </Typography>
-              </a>
-              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
-                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
-                  Contact Us
-                </Typography>
-              </a>
-              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+              <a className="header_link" id="link" href="#deep-fake" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
                 <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Deep Fakes
                 </Typography>
               </a>
-              <a className="header_link" id="link" href="#contact" style={{ textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+              <a className="header_link" id="link" href="#models" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
                 <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
                   Models
                 </Typography>
               </a>
+              <a className="header_link" id="link" href="#scanner" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }}  >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}    >
+                  Scanner
+                </Typography>
+              </a>
+              <a className="header_link" id="link" href="#goals" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}   >
+                  Future Goals
+                </Typography>
+              </a>
+              <a className="header_link" id="link" href="#contact" style={{ color: "#163E7B", textDecoration: "none", marginInline: "16px", marginBlock: "6px", }} >
+                <Typography fontSize={16} fontWeight={"Bold"} sx={{ textTransform: "none", }}  >
+                  Contact Us
+                </Typography>
+              </a>
+
+
             </div>
           </Box>
         </Toolbar>

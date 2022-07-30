@@ -15,46 +15,16 @@ export default function Home() {
     <>
       <Navbar />
       <div
-        style={{
-          backgroundPosition: "top",
-          backgroundSize: "100%",
-          backgroundImage: `url(${uet})`,
-          paddingBlock: "200px",
-        }}
-      >
+        style={{ backgroundPosition: "top", backgroundSize: "100%", backgroundImage: `url(${uet})`, paddingBlock: "200px", }}  >
         <Container>
-          <h2
-            style={{
-              color: "#fff",
-              fontSize: "2rem",
-              width: "fit-content",
-              marginInline: "auto",
-              padding: "5px 15px",
-              borderRadius: "15px",
-              background: "rgba(0,0,0,0.75)",
-              cursor: "default",
-            }}
-          >
+          <h2 style={{ color: "#fff", fontSize: "2rem", width: "fit-content", marginInline: "auto", padding: "5px 15px", borderRadius: "15px", background: "rgba(0,0,0,0.75)", cursor: "default", }}>
             Multimedia Signal Processing Lab
           </h2>
         </Container>
       </div>
-      <Container
-        sx={{
-          paddingBlock: "20px",
-        }}
-      >
+      <Container id="deep-fake" sx={{ paddingBlock: "20px", }} >
         <Grid container sx={{ paddingTop: "40px" }}>
-          <Grid
-            item
-            xs={12}
-            sm={5}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
+          <Grid ite xs={12} sm={5} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", }} >
             <h1>What are DeepFakes</h1>
             <p style={{ textAlign: "justify" }}>
               Deepfakes are synthetic media in which a person in an existing
@@ -66,59 +36,27 @@ export default function Home() {
             </p>
           </Grid>
           <Grid item xs={1}></Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            sx={{ display: "flex", alignItems: "center" }}
-          >
-            <video
-              style={{
-                maxWidth: "100%",
-                borderRadius: "20px",
-              }}
-              controls
-            >
+          <Grid item xs={12} sm={6} sx={{ display: "flex", alignItems: "center" }}  >
+            <video style={{ maxWidth: "100%", borderRadius: "20px", }} controls   >
               <source src={vid} type="video/mp4" />
             </video>
           </Grid>
         </Grid>
       </Container>
-      <Container>
-        <h2
-          style={{
-            fontSize: "2rem",
-            textAlign: "center",
-            marginBottom: "20px",
-            marginTop: "40px",
-          }}
-        >
+      <Container id="models">
+
+        <h2 style={{ fontSize: "2rem", textAlign: "center", marginBottom: "20px", marginTop: "40px", }}   >
           Pre Trained Models
         </h2>
-        <Grid
-          container
-          spacing={5}
-          sx={{ marginTop: "20px", marginBottom: "40px" }}
-        >
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-
+        <Grid container spacing={5} sx={{ marginTop: "20px", marginBottom: "40px" }}  >
+          <Grid item xs={12} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "center", }}  >
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
                   <div className="card-front">
-                  <h3>EfficientNet</h3>
+                    <h3>EfficientNet</h3>
                   </div>
                   <div className="card-back">
-                    
                     EfficientNet is a convolutional neural network architecture and scaling method that uniformly
                     scales all dimensions of depth/width/resolution using a compound coefficient. Unlike
                     conventional practice that arbitrary scales these factors, the EfficientNet scaling method
@@ -127,40 +65,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* <div className="card">
-              <div className="model_wrapper">
-                <div className="model_container">
-                  <h3>EfficientNet</h3>
-                  <p style={{ textAlign: "justify" }}>
-                    EfficientNet is a convolutional neural network architecture and scaling method that uniformly
-                    scales all dimensions of depth/width/resolution using a compound coefficient. Unlike
-                    conventional practice that arbitrary scales these factors, the EfficientNet scaling method
-                    uniformly scales network width, depth, and resolution with a set of fixed scaling coefficients.
-                  </p>
-                </div>
-              </div>
-            </div> */}
-
           </Grid>
 
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
+          <Grid item xs={12} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "center", }}   >
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
                   <div className="card-front_1">
-                  <h3>DenseNet</h3>
+                    <h3>DenseNet</h3>
                   </div>
                   <div className="card-back">
-                   
                     A DenseNet is a type of convolutional neural network that utilises dense connections
                     between layers, through Dense Blocks, where we connect all layers with matching feature-map sizes
                     directly with each other. To preserve the feed-forward nature, each layer obtains additional
@@ -169,28 +83,16 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-
           </Grid>
 
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
+          <Grid item xs={12} md={4} sx={{ display: "flex", flexDirection: "column", alignItems: "center", }}  >
             <div className="r">
               <div className="cardbox">
                 <div className="card facebook">
                   <div className="card-front_2">
-                  <h3>ResNet</h3>
+                    <h3>ResNet</h3>
                   </div>
                   <div className="card-back">
-                    
                     Residual Networks, or ResNets, learn residual functions with reference to the layer inputs,
                     instead of learning unreferenced functions. Instead of hoping each few stacked layers directly
                     fit a desired underlying mapping, residual nets let these layers fit a residual mapping. They
@@ -200,8 +102,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-
           </Grid>
         </Grid>
       </Container>
@@ -217,28 +117,15 @@ export default function Home() {
             and ischemic stroke by using federated, knowledge-infused learning, and deep learning models.
             Develop secure, voice-controlled, explainable AI-based decision support systems for
             cyberphysical system (CPS) by designing
-
           </ReadMore>
         </div>
       </Container>
       <ContactUs />
       <Container>
         <Divider />
-        <div
-          style={{
-            paddingBlock: "50px",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div style={{ paddingBlock: "50px", display: "flex", justifyContent: "space-between", }}   >
           <p>Copyright 2022 - Smiles Lab</p>
-          <ul
-            style={{
-              listStyleType: "none",
-              display: "flex",
-              gap: "20px",
-            }}
-          >
+          <ul style={{ listStyleType: "none", display: "flex", gap: "20px", }}  >
             <li>
               <a href="linkedIn" className="social-link">
                 <LinkedIn />
