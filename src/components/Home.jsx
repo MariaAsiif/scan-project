@@ -138,7 +138,7 @@ export default function Home() {
       <ContactUs />
       <Container>
         <Divider />
-        <div style={{ paddingBlock: "50px", display: "flex", alignItems: "center", justifyContent: "space-between", }}   >
+        <div style={{ paddingBlock: "50px", display: "flex", justifyContent: "space-between", }}   >
           <p>Copyright 2022 - Smiles Lab</p>
           <div>
             <p style={{ color: "#163E7B", marginBottom: 5 }}>Social Media Links</p>

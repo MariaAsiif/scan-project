@@ -31,9 +31,9 @@ export default function Navbar() {
       <Container>
         <Toolbar disableGutters>
           <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: "none", md: "flex" } }} >
-            <span className="header_link" href={"/"}>
+            <a className="header_link" href={"/"}>
               <img className="main-logo" src={logo2} alt="Logo" />
-            </span>
+            </a>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, position: 'relative' }}>
