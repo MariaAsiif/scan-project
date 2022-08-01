@@ -125,7 +125,7 @@ export default function ContactUs() {
     {
       img: expert6,
       name: "Dr. Khalid Malik",
-      info: "Passionate, problem solver and loves reading with interest in gym and writing. Works in machine learning and deep learning",
+      information: "Passionate, problem solver and loves reading with interest in gym and writing. Works in machine learning and deep learning",
       phone_number: "(212) 555-1234",
       email: "memanasraza@gmail.com",
     },
@@ -142,11 +142,10 @@ export default function ContactUs() {
             <Contact
               key={index}
               img={info.img}
-              name="Khalid Mahmood Malik, PhD, PMP"
-              info="Possess extensive experience of industry and academic research in areas of 
-                AI in Cybersecurity with focus on multimedia forensics and automated knowledge graph generation using AI. "
-              phone_number="(212) 555-1234"
-              email="mahmood@oakland.edu"
+              name={info.name}
+              info={info.information}
+              phone_number={info.phone_number}
+              email={info.email}
             />
 
 

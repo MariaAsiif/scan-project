@@ -56,7 +56,7 @@ export default function ScannerSection() {
 
       try {
         const res = await axios.post(
-          "http://127.0.0.1:8000/prediction",
+          "/prediction",
           formData,
           {
             headers: {
@@ -64,6 +64,7 @@ export default function ScannerSection() {
             },
           }
         );
+        console.log("Res" , res )
 
         JSON.stringify(res);
         if (res.status === 200) {
