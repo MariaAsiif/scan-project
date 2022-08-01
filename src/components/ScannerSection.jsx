@@ -55,7 +55,7 @@ export default function ScannerSection() {
       if (fileUrl) {
         let valid = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(fileUrl);
         if (valid === false ) {
-          setErrorMsg("Your url is not correct ")
+          setErrorMsg("File url is not correct ")
           handleClick();
           return
 
