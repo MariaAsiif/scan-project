@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Bars } from "react-loader-spinner";
-import { Alert, Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, Snackbar, } from "@mui/material";
+import { Alert, Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, Snackbar, TextField, } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUploadOutlined";
 import Box from '@mui/material/Box';
 import scannerPic from "../static/media/scanner-image2.png"
@@ -11,6 +11,7 @@ export default function ScannerSection() {
   const [model, setmodel] = useState("efficientNet")
   const [clip, setclip] = useState("audio")
   const [file, setFile] = useState("");
+  const [fileUrl, setFileUrl] = useState("");
   const [result, setResult] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -54,6 +55,7 @@ export default function ScannerSection() {
       setLoading(true);
 
       formData.append("file", file);
+      formData.append("fileurl", fileUrl);
 
       try {
         const res = await axios.post(
@@ -142,14 +144,19 @@ export default function ScannerSection() {
 
 
 
-          <div style={{ marginBottom: 15 }} >
+          <div style={{ marginBottom: 15 , display:'flex' , justifyContent:'space-between' }} >
             <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
             >
-             {file ? `${file.name}` : "Upload your file"}
+              {file ? `${file.name}` : "Upload your file"}
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
+
+            <TextField value={fileUrl} style={{width:'50%'}} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.example.com"
+              sx={{ maxHeight: "50vh", marginTop: "5px", marginRight:'7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            />
           </div>
+          
           <div>
             <Button variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
