@@ -6,6 +6,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUploadOutlined";
 import Box from '@mui/material/Box';
 import scannerPic from "../static/media/scanner-image2.png"
 import { fontWeight } from "@mui/system";
+import logo from '../static/media/loader3.gif'
 export default function ScannerSection() {
   const [model, setmodel] = useState("efficientNet")
   const [clip, setclip] = useState("audio")
@@ -64,7 +65,7 @@ export default function ScannerSection() {
             },
           }
         );
-        console.log("Res" , res )
+        console.log("Res", res)
 
         JSON.stringify(res);
         if (res.status === 200) {
@@ -98,18 +99,7 @@ export default function ScannerSection() {
 
           </Snackbar>
           <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", color: "#163E7B", }} >Deep fake Scanner</h2>
-          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
-            <InputLabel id="select-model" sx={{ color: "#163E7B", }}   >
-              Choose Model
-            </InputLabel>
-            <Select value={model} onChange={(e) => { setmodel(e.target.value) }} labelId="select-model" id="select-model" label="Choose Model"
-              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
-            >
-              <MenuItem value="efficientNet">Efficient Net</MenuItem>
-              <MenuItem value="resNet">Res Net</MenuItem>
-              <MenuItem value="denseNet">Dense Net</MenuItem>
-            </Select>
-          </FormControl>
+
 
           <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
             <InputLabel id="select-clip" sx={{ color: "#163E7B", }}   >
@@ -121,6 +111,31 @@ export default function ScannerSection() {
               <MenuItem value={"audio"}>audio</MenuItem>
               <MenuItem value={"video"}>video</MenuItem>
               <MenuItem value={"multimode/both"}>multimode/both</MenuItem>
+            </Select>
+          </FormControl>
+
+          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
+            <InputLabel id="select-model" sx={{ color: "#163E7B", }}   >
+              Choose Model
+            </InputLabel>
+            <Select value={model} onChange={(e) => { setmodel(e.target.value) }} labelId="select-model" id="select-model" label="Choose Model"
+              sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            >
+              {/* <>
+                  <MenuItem value="efficientNet">Efficient Net</MenuItem>
+                  <MenuItem value="resNet">Res Net</MenuItem>
+                  <MenuItem value="denseNet">Dense Net</MenuItem>
+                </> */}
+
+              {clip === "video" && <MenuItem value="efficientNet">Efficient Net</MenuItem>}
+              {clip === "video" && <MenuItem value="resNet">Res Net</MenuItem>}
+              {clip === "video" && <MenuItem value="denseNet">Dense Net</MenuItem>}
+
+              {clip === "audio" && <MenuItem value="AAA">AAA</MenuItem>}
+
+              {clip === "multimode/both" && <MenuItem value="M">M</MenuItem>}
+
+
             </Select>
           </FormControl>
 
@@ -145,9 +160,9 @@ export default function ScannerSection() {
           {isLoading ?
             (
               <>
-
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "#dcdcdc96" }}>
-                  <Bars color="#163E7B" width="100%" />
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 99, background: "#dcdcdc96" }}>
+                  <img src={logo} alt="loading..." />
+                  {/* <Bars color="#163E7B" width="100%" /> */}
                   <p style={{ textAlign: "center", fontSize: 23, fontWeight: 600 }}>File is loading</p>
                 </div>
 
@@ -161,6 +176,6 @@ export default function ScannerSection() {
         </Grid>
 
       </Grid>
-    </Box>
+    </Box >
   );
 }
