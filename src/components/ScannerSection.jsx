@@ -143,10 +143,10 @@ export default function ScannerSection() {
 
 
           <div style={{ marginBottom: 15 }} >
-            <Button component="label" variant="outlined" className="upload_button" startIcon={<CloudUploadIcon />}
+            <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
             >
-              Upload your file
+             {file ? `${file.name}` : "Upload your file"}
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
           </div>
