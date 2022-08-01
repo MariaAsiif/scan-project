@@ -33,29 +33,60 @@ export default function ScannerSection() {
 
     setOpen(false);
   };
+
+
+  console.log("file", file)
+  console.log("fileUrl", fileUrl)
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (file === "") {
+    if (file === "" && fileUrl === "") {
       setErrorMsg("Please select a video to scan.");
       handleClick();
-    } else {
+    }
+
+
+    else {
+
+
       const formData = new FormData();
       const blob = file
-      if (clip === "audio" && blob.type !== "audio/mpeg") {
+
+      if (fileUrl) {
+        let valid = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(fileUrl);
+        if (valid === false ) {
+          setErrorMsg("Your url is not correct ")
+          handleClick();
+          return
+
+        }
+      }
+
+      else if (clip === "audio" && blob.type !== "audio/mpeg") {
         setErrorMsg("Please upload a audio file.");
         handleClick();
         return
       }
 
-      if (clip === "video" && blob.type !== "video/mp4") {
+      else if ( clip === "video" && blob.type !== "video/mp4") {
         setErrorMsg("Please upload a video file");
         handleClick();
         return
       }
+
+      
+
+      if (file !== "" && fileUrl !== "") {
+        setErrorMsg("Kindly select one field ")
+        handleClick();
+        return
+      }
+
       setLoading(true);
 
       formData.append("file", file);
       formData.append("fileurl", fileUrl);
+
 
       try {
         const res = await axios.post(
@@ -144,7 +175,7 @@ export default function ScannerSection() {
 
 
 
-          <div style={{ marginBottom: 15 , display:'flex' , justifyContent:'space-between' }} >
+          <div style={{ marginBottom: 15, display: 'flex', justifyContent: 'space-between' }} >
             <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
             >
@@ -152,11 +183,11 @@ export default function ScannerSection() {
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
 
-            <TextField value={fileUrl} style={{width:'50%'}} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
-              sx={{ maxHeight: "50vh", marginTop: "5px", marginRight:'7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            <TextField value={fileUrl} style={{ width: '50%' }} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
+              sx={{ maxHeight: "50vh", marginTop: "5px", marginRight: '7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             />
           </div>
-          
+
           <div>
             <Button variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
