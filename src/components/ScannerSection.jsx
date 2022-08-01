@@ -152,7 +152,7 @@ export default function ScannerSection() {
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
 
-            <TextField value={fileUrl} style={{width:'50%'}} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.example.com"
+            <TextField value={fileUrl} style={{width:'50%'}} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
               sx={{ maxHeight: "50vh", marginTop: "5px", marginRight:'7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             />
           </div>
