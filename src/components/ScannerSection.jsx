@@ -54,7 +54,7 @@ export default function ScannerSection() {
 
       if (fileUrl) {
         let valid = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(fileUrl);
-        if (valid === false ) {
+        if (valid === false) {
           setErrorMsg("File url is not correct ")
           handleClick();
           return
@@ -68,13 +68,13 @@ export default function ScannerSection() {
         return
       }
 
-      else if ( clip === "video" && blob.type !== "video/mp4") {
+      else if (clip === "video" && blob.type !== "video/mp4") {
         setErrorMsg("Please upload a video file");
         handleClick();
         return
       }
 
-      
+
 
       if (file !== "" && fileUrl !== "") {
         setErrorMsg("Kindly select one field ")
@@ -154,42 +154,33 @@ export default function ScannerSection() {
             <Select value={model} onChange={(e) => { setmodel(e.target.value) }} labelId="select-model" id="select-model" label="Choose Model"
               sx={{ maxHeight: "50vh", marginTop: "5px", ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             >
-              {/* <>
-                  <MenuItem value="efficientNet">Efficient Net</MenuItem>
-                  <MenuItem value="resNet">Res Net</MenuItem>
-                  <MenuItem value="denseNet">Dense Net</MenuItem>
-                </> */}
-
               {clip === "video" && <MenuItem value="efficientNet">Efficient Net</MenuItem>}
               {clip === "video" && <MenuItem value="resNet">Res Net</MenuItem>}
               {clip === "video" && <MenuItem value="denseNet">Dense Net</MenuItem>}
-
               {clip === "audio" && <MenuItem value="AAA">AAA</MenuItem>}
-
               {clip === "multimode/both" && <MenuItem value="M">M</MenuItem>}
-
-
             </Select>
           </FormControl>
 
 
-
-
-          <div style={{ marginBottom: 15, display: 'flex', justifyContent: 'space-between' }} >
+          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
             <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
+              style={{ width: "100%", height: 49 }}
             >
               {file ? `${file.name}` : "Upload your file"}
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
-
-            <TextField value={fileUrl} style={{ width: '50%' }} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
-              sx={{ maxHeight: "50vh", marginTop: "5px", marginRight: '7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "12px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+          </FormControl>
+          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
+            <TextField value={fileUrl} style={{ width: '100%', }} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
+              sx={{ maxHeight: "40vh", marginTop: "5px", marginRight: '7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "1px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
             />
-          </div>
+          </FormControl>
+
 
           <div>
-            <Button variant="outlined"
+            <Button style={{ width: "40%" }} variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
               SCAN
             </Button>
