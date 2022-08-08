@@ -163,24 +163,29 @@ export default function ScannerSection() {
           </FormControl>
 
 
-          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
+          <FormControl sx={{ width: "40%", marginRight: 2 }}  >
             <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
-              sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }}
+              sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginBottom: 0, marginRight: 0, }}
               style={{ width: "100%", height: 49 }}
             >
               {file ? `${file.name}` : "Upload your file"}
               <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
             </Button>
           </FormControl>
-          <FormControl sx={{ width: "40%", marginBottom: 2, marginRight: 2 }}  >
-            <TextField value={fileUrl} style={{ width: '100%', }} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
+          <FormControl sx={{ width: "40%", marginRight: 2 }}  >
+            {/* <TextField value={fileUrl} style={{ width: '100%', }} onChange={(e) => { setFileUrl(e.target.value) }} labelId="outlined-basic" id="outlined-basic" label="http://www.url.com"
               sx={{ maxHeight: "40vh", marginTop: "5px", marginRight: '7rem', ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": { paddingBlock: "1px", }, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
-            />
+            /> */}
+            <TextField
+              label="http://www.url.com"
+              onChange={(e) => { setFileUrl(e.target.value) }}
+              sx={{ "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+              id="outlined-basic" variant="outlined" />
           </FormControl>
 
 
           <div>
-            <Button style={{ width: "40%" }} variant="outlined"
+            <Button style={{ width: "40%", marginTop: 17 }} variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginTop: 1, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
               SCAN
             </Button>
