@@ -179,8 +179,8 @@ export default function ScannerSection() {
             </FormControl>
           </div>
 
-          <div style={{ display: "flex", marginBottom: 30, }}>
-            <Button style={{ width: "47%", display: "block", margin: "0 12px", padding: "12px 0px" }} variant="outlined"
+          <div style={{ display: "flex", marginBottom: 30, justifyContent:'flex-end'}}>
+            <Button style={{ width: "46.3%", display: "block" , margin: "0 12px", padding: "12px 0px" }} variant="outlined"
               sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
               SCAN
             </Button>
