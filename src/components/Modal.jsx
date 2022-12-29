@@ -11,7 +11,7 @@ const Modal = ({ setIsOpen }) => {
           <div className="close">
             <button className="center" onClick={() => setIsOpen(false)}>
               {" "}
-              close
+              Close
             </button>
             <WebcamVideo />
           </div>
