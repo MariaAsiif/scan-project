@@ -60,17 +60,17 @@ export default function WebcamVideo() {
   return (
     <div className="Container">
       <Webcam
-        height={700}
-        width={700}
+        height={400}
+        width={400}
         audio={false}
         mirrored={true}
         ref={webcamRef}
         videoConstraints={videoConstraints}
       />
       {capturing ? (
-        <button onClick={handleStopCaptureClick}>Stop Capture</button>
+        <button onClick={handleStopCaptureClick}>Stop Recoding</button>
       ) : (
-        <button onClick={handleStartCaptureClick}>Start Capture</button>
+        <button onClick={handleStartCaptureClick}>Start Recoding</button>
       )}
       {recordedChunks.length > 0 && (
         <button onClick={handleDownload}>Download</button>
