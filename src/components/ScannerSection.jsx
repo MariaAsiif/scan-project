@@ -1,20 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Bars } from "react-loader-spinner";
-import { Alert, Button, Container, FormControl, Grid, InputLabel, MenuItem, Select, Snackbar, TextField, } from "@mui/material";
+import {
+  Alert,
+  Button,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+  TextField,
+} from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUploadOutlined";
-import Box from '@mui/material/Box';
-import scannerPic from "../static/media/scanner-image2.png"
+import Box from "@mui/material/Box";
+import scannerPic from "../static/media/scanner-image2.png";
 import { fontWeight } from "@mui/system";
-import logo from '../static/media/loader3.gif'
+import logo from "../static/media/loader3.gif";
+import Modal from "./Modal";
 export default function ScannerSection() {
-  const [model, setmodel] = useState("efficientNet")
-  const [clip, setclip] = useState("audio")
+  const [model, setmodel] = useState("efficientNet");
+  const [clip, setclip] = useState("audio");
   const [file, setFile] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [result, setResult] = useState("");
   const [isLoading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const onChange = (e) => {
     setFile(e.target.files[0]);
@@ -34,52 +47,42 @@ export default function ScannerSection() {
     setOpen(false);
   };
 
-
-  console.log("file", file)
-  console.log("fileUrl", fileUrl)
+  console.log("file", file);
+  console.log("fileUrl", fileUrl);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     if (file === "" && fileUrl === "") {
       setErrorMsg("Please select a video to scan.");
       handleClick();
-    }
-
-
-    else {
-
-
+    } else {
       const formData = new FormData();
-      const blob = file
+      const blob = file;
 
       if (fileUrl) {
-        let valid = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(fileUrl);
+        let valid =
+          /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(
+            fileUrl
+          );
         if (valid === false) {
-          setErrorMsg("File url is not correct ")
+          setErrorMsg("File url is not correct ");
           handleClick();
-          return
-
+          return;
         }
-      }
-
-      else if (clip === "audio" && blob.type !== "audio/mpeg") {
+      } else if (clip === "audio" && blob.type !== "audio/mpeg") {
         setErrorMsg("Please upload a audio file.");
         handleClick();
-        return
-      }
-
-      else if (clip === "video" && blob.type !== "video/mp4") {
+        return;
+      } else if (clip === "video" && blob.type !== "video/mp4") {
         setErrorMsg("Please upload a video file");
         handleClick();
-        return
+        return;
       }
 
-
-
       if (file !== "" && fileUrl !== "") {
-        setErrorMsg("Kindly select one field ")
+        setErrorMsg("Kindly select one field ");
         handleClick();
-        return
+        return;
       }
 
       setLoading(true);
@@ -87,18 +90,13 @@ export default function ScannerSection() {
       formData.append("file", file);
       formData.append("fileurl", fileUrl);
 
-
       try {
-        const res = await axios.post(
-          "/prediction",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        console.log("Res", res)
+        const res = await axios.post("/prediction", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        console.log("Res", res);
 
         JSON.stringify(res);
         if (res.status === 200) {
@@ -117,41 +115,101 @@ export default function ScannerSection() {
   };
 
   return (
-    <Box id="scanner" py={8} px={3} style={{ background: "#F5F5F5", }}   >
-      <Grid container spacing={5}  >
-        <Grid item md={6}  >
+    <Box id="scanner" py={8} px={3} style={{ background: "#F5F5F5" }}>
+      <Grid container spacing={5}>
+        <Grid item md={6}>
           <Box>
             <img id="scannerimage" src={scannerPic} />
           </Box>
         </Grid>
-        <Grid item md={6}     >
-          <Snackbar anchorOrigin={{ vertical: "bottom", horizontal: "right" }} open={open} autoHideDuration={3000} onClose={handleClose} >
-            <Alert onClose={handleClose} severity="error" sx={{ width: "100%", background: "#d74545", color: "#fff", svg: { color: "#fff", }, }}  >
+        <Grid item md={6}>
+          <Snackbar
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            open={open}
+            autoHideDuration={3000}
+            onClose={handleClose}
+          >
+            <Alert
+              onClose={handleClose}
+              severity="error"
+              sx={{
+                width: "100%",
+                background: "#d74545",
+                color: "#fff",
+                svg: { color: "#fff" },
+              }}
+            >
               {errorMsg}
             </Alert>
-
           </Snackbar>
-          <h2 style={{ fontSize: "48px", textAlign: "center", marginBottom: "20px", color: "#163E7B", }} >Deep fake Scanner</h2>
+          <h2
+            style={{
+              fontSize: "48px",
+              textAlign: "center",
+              marginBottom: "20px",
+              color: "#163E7B",
+            }}
+          >
+            Deep fake Scanner
+          </h2>
 
           <div style={{ display: "flex", marginBottom: 30 }}>
-            <FormControl style={{ width: "50%", margin: "0 12px" }}   >
-              <InputLabel id="select-clip" sx={{ color: "#163E7B", }}   > Choose clip </InputLabel>
-              <Select value={clip} onChange={(e) => { setclip(e.target.value) }} labelId="select-clip" id="select-clip" label="Choose Clip"
-                sx={{ ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": {}, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            <FormControl style={{ width: "50%", margin: "0 12px" }}>
+              <InputLabel id="select-clip" sx={{ color: "#163E7B" }}>
+                {" "}
+                Choose clip{" "}
+              </InputLabel>
+              <Select
+                value={clip}
+                onChange={(e) => {
+                  setclip(e.target.value);
+                }}
+                labelId="select-clip"
+                id="select-clip"
+                label="Choose Clip"
+                sx={{
+                  ".MuiSvgIcon-root": { color: "black" },
+                  color: "black",
+                  "& .MuiSelect-select": {},
+                  "& fieldset": { border: "3px solid #163E7B" },
+                  "&:hover": { "& fieldset": { border: "3px solid #163E7B" } },
+                }}
               >
                 <MenuItem value={"audio"}>audio</MenuItem>
                 <MenuItem value={"video"}>video</MenuItem>
                 <MenuItem value={"multimode/both"}>multimode/both</MenuItem>
               </Select>
             </FormControl>
-            <FormControl style={{ width: "50%", margin: "0 12px" }}  >
-              <InputLabel id="select-model" sx={{ color: "#163E7B", }}   >  Choose Model  </InputLabel>
-              <Select value={model} onChange={(e) => { setmodel(e.target.value) }} labelId="select-model" id="select-model" label="Choose Model"
-                sx={{ ".MuiSvgIcon-root": { color: "black", }, color: "black", "& .MuiSelect-select": {}, "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
+            <FormControl style={{ width: "50%", margin: "0 12px" }}>
+              <InputLabel id="select-model" sx={{ color: "#163E7B" }}>
+                {" "}
+                Choose Model{" "}
+              </InputLabel>
+              <Select
+                value={model}
+                onChange={(e) => {
+                  setmodel(e.target.value);
+                }}
+                labelId="select-model"
+                id="select-model"
+                label="Choose Model"
+                sx={{
+                  ".MuiSvgIcon-root": { color: "black" },
+                  color: "black",
+                  "& .MuiSelect-select": {},
+                  "& fieldset": { border: "3px solid #163E7B" },
+                  "&:hover": { "& fieldset": { border: "3px solid #163E7B" } },
+                }}
               >
-                {clip === "video" && <MenuItem value="efficientNet">Efficient Net</MenuItem>}
-                {clip === "video" && <MenuItem value="resNet">Res Net</MenuItem>}
-                {clip === "video" && <MenuItem value="denseNet">Dense Net</MenuItem>}
+                {clip === "video" && (
+                  <MenuItem value="efficientNet">Efficient Net</MenuItem>
+                )}
+                {clip === "video" && (
+                  <MenuItem value="resNet">Res Net</MenuItem>
+                )}
+                {clip === "video" && (
+                  <MenuItem value="denseNet">Dense Net</MenuItem>
+                )}
                 {clip === "audio" && <MenuItem value="AAA">AAA</MenuItem>}
                 {clip === "multimode/both" && <MenuItem value="M">M</MenuItem>}
               </Select>
@@ -159,36 +217,110 @@ export default function ScannerSection() {
           </div>
 
           <div style={{ display: "flex", marginBottom: 30 }}>
-
-            <FormControl style={{ width: "50%", margin: "0 12px" }}  >
-              <Button component="label" variant="outlined" className="upload_button" endIcon={<CloudUploadIcon />}
-                sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginBottom: 0, marginRight: 0, }}
+            <FormControl style={{ width: "50%", margin: "0 12px" }}>
+              <Button
+                component="label"
+                variant="outlined"
+                className="upload_button"
+                endIcon={<CloudUploadIcon />}
+                sx={{
+                  width: "fit-content",
+                  textTransform: "none",
+                  color: "black",
+                  border: "3px solid #163E7B",
+                  "&:hover": { border: "3px solid #636fbd" },
+                  marginBottom: 0,
+                  marginRight: 0,
+                }}
                 style={{ width: "100%", height: "100%" }}
               >
                 {file ? `${file.name}` : "Upload your file"}
-                <input type="file" accept="audio/*,video/*" style={{ display: "none", }} id="customFile" onChange={onChange} />
+                <input
+                  type="file"
+                  accept="audio/*,video/*"
+                  style={{ display: "none" }}
+                  id="customFile"
+                  onChange={onChange}
+                />
               </Button>
             </FormControl>
 
-            <FormControl style={{ width: "50%", margin: "0 12px" }}  >
+            <FormControl style={{ width: "50%", margin: "0 12px" }}>
               <TextField
                 label="http://www.url.com"
-                onChange={(e) => { setFileUrl(e.target.value) }}
-                sx={{ "& fieldset": { border: "3px solid #163E7B", }, "&:hover": { "& fieldset": { border: "3px solid #163E7B", }, }, }}
-                id="outlined-basic" variant="outlined" />
+                onChange={(e) => {
+                  setFileUrl(e.target.value);
+                }}
+                sx={{
+                  "& fieldset": { border: "3px solid #163E7B" },
+                  "&:hover": { "& fieldset": { border: "3px solid #163E7B" } },
+                }}
+                id="outlined-basic"
+                variant="outlined"
+              />
             </FormControl>
           </div>
 
-          <div style={{ display: "flex", marginBottom: 30, justifyContent:'flex-end'}}>
-            <Button style={{ width: "46.3%", display: "block" , margin: "0 12px", padding: "12px 0px" }} variant="outlined"
-              sx={{ width: "fit-content", textTransform: "none", color: "black", border: "3px solid #163E7B", "&:hover": { border: "3px solid #636fbd", }, marginBottom: 0, marginRight: 0, }} type="submit" onClick={onSubmit}  >
+          <div
+            style={{
+              display: "flex",
+              marginBottom: 30,
+              justifyContent: "flex-end",
+            }}
+          >
+            <button
+              style={{
+                width: "46.3%",
+                display: "block",
+                margin: "0 12px",
+                padding: "12px 0px",
+              }}
+              variant="outlined"
+              sx={{
+                width: "fit-content",
+                textTransform: "none",
+                color: "black",
+                border: "3px solid #163E7B",
+                "&:hover": { border: "3px solid #636fbd" },
+                marginBottom: 0,
+                marginRight: 0,
+              }}
+              onClick={() => setIsOpen(true)}
+            >
+              Open Modal
+            </button>
+            {isOpen && <Modal setIsOpen={setIsOpen} />}
+          </div>
+          <div
+            style={{
+              display: "flex",
+              marginBottom: 30,
+              justifyContent: "flex-end",
+            }}
+          >
+            <Button
+              style={{
+                width: "46.3%",
+                display: "block",
+                margin: "0 12px",
+                padding: "12px 0px",
+              }}
+              variant="outlined"
+              sx={{
+                width: "fit-content",
+                textTransform: "none",
+                color: "black",
+                border: "3px solid #163E7B",
+                "&:hover": { border: "3px solid #636fbd" },
+                marginBottom: 0,
+                marginRight: 0,
+              }}
+              type="submit"
+              onClick={onSubmit}
+            >
               SCAN
             </Button>
-
-
           </div>
-
-
 
           {/*  
 
@@ -248,25 +380,37 @@ export default function ScannerSection() {
             </Button>
           </div>   */}
 
-          {isLoading ?
-            (
-              <>
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: 99, background: "#dcdcdc96" }}>
-                  <img src={logo} alt="loading..." />
-                  {/* <Bars color="#163E7B" width="100%" /> */}
-                  <p style={{ textAlign: "center", fontSize: 23, fontWeight: 600 }}>File is loading</p>
-                </div>
-
-              </>
-
-            ) : (
-              <p style={{ textAlign: "center", color: "#fff" }}>{result}</p>
-
-            )}
-
+          {isLoading ? (
+            <>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  position: "fixed",
+                  top: 0,
+                  left: 0,
+                  width: "100vw",
+                  height: "100vh",
+                  zIndex: 99,
+                  background: "#dcdcdc96",
+                }}
+              >
+                <img src={logo} alt="loading..." />
+                {/* <Bars color="#163E7B" width="100%" /> */}
+                <p
+                  style={{ textAlign: "center", fontSize: 23, fontWeight: 600 }}
+                >
+                  File is loading
+                </p>
+              </div>
+            </>
+          ) : (
+            <p style={{ textAlign: "center", color: "#fff" }}>{result}</p>
+          )}
         </Grid>
-
       </Grid>
-    </Box >
+    </Box>
   );
 }
