@@ -1,5 +1,6 @@
 import React from "react";
 import Webcam from "react-webcam";
+import "./modal.css";
 
 export default function WebcamVideo() {
   const webcamRef = React.useRef(null);
@@ -59,8 +60,8 @@ export default function WebcamVideo() {
   return (
     <div className="Container">
       <Webcam
-        height={400}
-        width={400}
+        height={700}
+        width={700}
         audio={false}
         mirrored={true}
         ref={webcamRef}

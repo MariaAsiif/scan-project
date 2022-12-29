@@ -1,0 +1,17 @@
+.Container {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  z-index: +998;
+}
+.center {
+  position: fixed;
+  background-color: rgb(138, 11, 11);
+  z-index: +999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

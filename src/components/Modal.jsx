@@ -1,5 +1,6 @@
 import React from "react";
 import WebcamVideo from "./WebcamVideo";
+import "./modal.css";
 
 const Modal = ({ setIsOpen }) => {
   return (
@@ -7,7 +8,10 @@ const Modal = ({ setIsOpen }) => {
       <div onClick={() => setIsOpen(false)} />
       <div>
         <div>
-          <button onClick={() => setIsOpen(false)}> mangrio</button>
+          <button className="center" onClick={() => setIsOpen(false)}>
+            {" "}
+            close
+          </button>
           <WebcamVideo />
         </div>
       </div>

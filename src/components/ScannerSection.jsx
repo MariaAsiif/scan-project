@@ -268,7 +268,7 @@ export default function ScannerSection() {
               justifyContent: "flex-end",
             }}
           >
-            <button
+            <Button
               style={{
                 width: "46.3%",
                 display: "block",
@@ -287,8 +287,8 @@ export default function ScannerSection() {
               }}
               onClick={() => setIsOpen(true)}
             >
-              Open Modal
-            </button>
+              Start Recoding
+            </Button>
             {isOpen && <Modal setIsOpen={setIsOpen} />}
           </div>
           <div
