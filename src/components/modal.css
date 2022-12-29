@@ -1,5 +1,7 @@
-.Container {
+.modal {
   display: flex;
+  flex-direction: column;
+
   position: fixed;
   left: 50%;
   top: 50%;
@@ -8,11 +10,6 @@
   z-index: +998;
 }
 .center {
-  position: fixed;
-  background-color: rgb(138, 11, 11);
-  z-index: +999;
-  left: 60%;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
+  padding: 0 12px;
+  margin-bottom: 10px;
 }

@@ -5,14 +5,16 @@ import "./modal.css";
 const Modal = ({ setIsOpen }) => {
   return (
     <>
-      <div onClick={() => setIsOpen(false)} />
-      <div>
+      <div className="modal">
+        <div className="man" onClick={() => setIsOpen(false)} />
         <div>
-          <button className="center" onClick={() => setIsOpen(false)}>
-            {" "}
-            close
-          </button>
-          <WebcamVideo />
+          <div className="close">
+            <button className="center" onClick={() => setIsOpen(false)}>
+              {" "}
+              close
+            </button>
+            <WebcamVideo />
+          </div>
         </div>
       </div>
     </>
