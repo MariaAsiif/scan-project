@@ -1,6 +1,18 @@
 import React from "react";
 import Webcam from "react-webcam";
 import "./modal.css";
+import {
+  Alert,
+  Button,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+  TextField,
+} from "@mui/material";
 
 export default function WebcamVideo() {
   const webcamRef = React.useRef(null);
@@ -60,20 +72,80 @@ export default function WebcamVideo() {
   return (
     <div className="Container">
       <Webcam
-        height={400}
-        width={400}
+        height={420}
+        width={420}
         audio={false}
         mirrored={true}
         ref={webcamRef}
         videoConstraints={videoConstraints}
       />
       {capturing ? (
-        <button onClick={handleStopCaptureClick}>Stop Recoding</button>
+        <Button
+          style={{
+            width: "100%",
+            display: "block",
+            margin: "12px 0",
+            padding: "12px 0px",
+          }}
+          variant="outlined"
+          sx={{
+            width: "fit-content",
+            textTransform: "none",
+            color: "black",
+            border: "3px solid #163E7B",
+            "&:hover": { border: "3px solid #636fbd" },
+            marginBottom: 0,
+            marginRight: 0,
+          }}
+          onClick={handleStopCaptureClick}
+        >
+          Stop Recoding
+        </Button>
       ) : (
-        <button onClick={handleStartCaptureClick}>Start Recoding</button>
+        <Button
+          style={{
+            width: "100%",
+            display: "block",
+            margin: "12px 0",
+            padding: "12px 0px",
+          }}
+          variant="outlined"
+          sx={{
+            width: "fit-content",
+            textTransform: "none",
+            color: "black",
+            border: "3px solid #163E7B",
+            "&:hover": { border: "3px solid #636fbd" },
+            marginBottom: 0,
+            marginRight: 0,
+          }}
+          onClick={handleStartCaptureClick}
+        >
+          Start Recoding
+        </Button>
       )}
       {recordedChunks.length > 0 && (
-        <button onClick={handleDownload}>Download</button>
+        <Button
+          style={{
+            width: "100%",
+            display: "block",
+            margin: "12px 0",
+            padding: "12px 0px",
+          }}
+          variant="outlined"
+          sx={{
+            width: "fit-content",
+            textTransform: "none",
+            color: "black",
+            border: "3px solid #163E7B",
+            "&:hover": { border: "3px solid #636fbd" },
+            marginBottom: 0,
+            marginRight: 0,
+          }}
+          onClick={handleDownload}
+        >
+          Download
+        </Button>
       )}
     </div>
   );
